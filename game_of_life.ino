@@ -104,7 +104,7 @@ void makeGolTurn()
         * Any live cell with more than three live neighbors dies, as if by overpopulation.
         * Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
         */
-        if ((neighboursCnt == 2 && UNSIGNED_ONE << j > 0) || neighboursCnt == 3)
+        if (neighboursCnt == 3 || (neighboursCnt == 2 && (grid[i] & UNSIGNED_ONE << j)))
           newGrid[i] |= UNSIGNED_ONE << j;
       }
     } 
